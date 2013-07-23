@@ -1,3 +1,9 @@
 .active {
   color: red;
+  background-color: blue;
 }
+
+a {
+  display: none;
+}
+

@@ -3,11 +3,10 @@ $(document).ready(function () {
   
   var tracks = ['#player1_strip', '#player2_strip'];
   var playerKeys = [65,76];
-  var trackLength = 70;
+  var trackLength = 20;
   for (var i = 0; i < tracks.length; i++) {
     for (var j = 0; j < trackLength; j++) {
-      $(tracks[i]).append("<td>|</td>");
-      $(tracks[i]).append("<td> </td>");
+      $(tracks[i]).append("<td>. .</td>");
     }
     $(tracks[i]).append("<td class='finish'>=</td>");
   }
@@ -24,9 +23,9 @@ $(document).ready(function () {
     if ($('.finish').hasClass('active')) {
       var winning_track = $('.finish.active');
       winning_track.parent().append('WINNER');
-      $("tr td:last:not('.active')").append('LOSER');
+      $(".finish:not('.active')").parent().append('LOSER');
       raceOver = true;
-      // this.parent().append('')
+      $('a').slideDown('slow');
       return true;
     }
     return false;
